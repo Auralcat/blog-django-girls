@@ -7,9 +7,11 @@
     <div>
         {% for post in posts %}
             <div>
+                <hr>
                 <p>published: {{ post.published_date  }}
                 <h1><a href="">{{ post.title }}</a></h1>
                 <p>{{ post.text|linebreaksbr }}</p>
+                <hr>
             </div>
         {% endfor %}
     </div>
