@@ -25,7 +25,7 @@ SECRET_KEY = 'bqhv(bj87so00a^_or%9!b)=#p$#k77)$l+l767qbkgbrv5nys'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['ashleyzt.pythonanywhere.com']
 
 
 # Application definition
