@@ -3,12 +3,15 @@
         <title>Blog da Ashley</title>
     </head>
     <body>
-        <h1>Um título</h1>
-        <p>Texto embaixo do título</p>
-        <br />
-        <a href="https://thisisnotporn.net">This is a link</a>
-        <p>Hi there!</p>
-        <p>It works!</p>
-        <p>I'm sorry, Dave. I'm afraid I can't do that.</p>
+        <p>Alterações ao vivo!</p>
+    <div>
+        {% for post in posts %}
+            <div>
+                <p>published: {{ post.published_date  }}
+                <h1><a href="">{{ post.title }}</a></h1>
+                <p>{{ post.text|linebreaksbr }}</p>
+            </div>
+        {% endfor %}
+    </div>
     </body>
 </html>
