@@ -1,25 +1,15 @@
-{% load staticfiles %}
+{% extends 'blog/base.html' %}
 
-<html>
-    <head>
-        <title>Blog da Ashley</title>
-        <link rel='stylesheet' href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
-        <link rel='stylesheet' href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
-        <link rel='stylesheet' href="{% static 'css/blog.css' %}">
-        <link href="https://fonts.googleapis.com/css?family=Helvetica&subset=latin,latin-ext" rel="stylesheet" type="text/css">
-    </head>
+{% block content %}
     <body>
-        <p>Alterações ao vivo!</p>
-    <div class="post_display">
         {% for post in posts %}
-            <div>
-                <hr>
-                <p>published: {{ post.published_date  }}
-                <h1><a href="">{{ post.title }}</a></h1>
-                <p>{{ post.text|linebreaksbr }}</p>
-                <hr>
+        <div class="post">
+            <div class="date">
+                {{ post.published_date }}
             </div>
+            <h1><a href="{% url 'blog.views.post_detail' pk=post.pk %}">{{ post.title }}</a></h1>
+            <p>{{ post.text|linebreaksbr }}</p>
+        </div>
         {% endfor %}
-    </div>
     </body>
-</html>
+{% endblock content %}
